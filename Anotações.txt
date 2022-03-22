@@ -1,0 +1,125 @@
+Aula de funções
+Objetivo:
+1- Mostrar como declarar funções
+2- como manipular parâmetros
+3- apresentar loops e outras declarações
+4- apresentar o argumento "this"
+__________________________________________________________
+** tipos de funções
+Funções são determinadas pela palavra reservada function;
+
+ Funções podem retornar ou não algum valor;
+
+-- Estrutura e Funções anônima
+
+-variáveis criadas dentro de uma função apenas podem ser utilizadas den-
+tro delas.
+-declarada como function
+-quando invocamos o "return", a função para de ser executada
+- uma variável pode armaxenar uma função.
+
+--Função autoinvocável e Callbaks
+-IIFE( immediateluy invoked function expression)
+- uma função anônima entre pârentese seguida por outro par de pârentese, 
+que representa sua chamada.
+- também pode ser utilizada com parâmentro ou armazenada em uma 
+variavel
+--Callbaks:
+-uma função passada como argumento para outra função.
+-tem maior controle da ordem de chamada.
+
+**Parâmetros
+
+--Valores padrão e objetos "arguments"
+ECMA2015
+--arguments
+um array com todos os parâmentros passados quando a função foi 
+invocada.
+
+--Arrays e objetos
+Spread: uma formaa de lidar separadamente com elementos 
+-o que era parte de um array se torna um elemento independente.
+rest: combinaos argumentos em um array
+-o  que era um elemnto independente se torna parte de um array
+object destructuring entre chaves podemos filtar apenas os dados que nos 
+interessam em um objeto.
+
+--loops
+-if/else e switch
+if : ocorre caso a condição seja verdadeira
+else: ocorre caso a condição seja falsa
+switch: equivale  uma comparação de tipo e  valor (===)
+-sempre precisa de um valor "default"
+- ideial para quando se precisa comparar muitos valores
+-for 
+loop dentro de elementos interáveis(arrays, strings)
+for in, loop entre propriedade enumeráveis de um objeto.
+for of 
+
+-while e do while
+while: executa instruções até que a condição se torne falsa
+do while  executa instruções ate que a condição se torna falsa, porém a
+ primeira execução sempre ocorre
+
+--this
+a palavra reservada this é uma referencia de contexto;
+exemplo: this pode ser um objeto pessoa
+
+seu valor pode mudar de acordo com o lugar no código onde foi chamada
+
+contexto			referencia
+em um objeto(método)	proprio objeto dono do método
+sozinha			objeto global(em navegadores, window)
+função 			objeto global
+evento 			elementoque recebeu o evento
+
+window obj pai do navegador
+
+--manipulando seu valor
+
+- metodo call:é possivel passar parametros de uma função separando-os
+por virgulas.
+-função apply: é possivel passar parametros para um função dentro de um 
+array.
+-metodo bind clona a estrutura da função onde é chamada e aplica o valor
+do objeto pssado como parametro.
+
+--arrow functions
+-sintaxe e outras restições
+representada por = () =>
+quando tem uma linha não precisa do "rerturn" ou das chaves
+caso exista apenas um paremetro, pode dispensar os pârenteses
+arrow function NÃO faz hoisting!!!
+-outras restições do arrow function:
+
+this sempre será o objeto global.
+não existe o objeto arguments.
+o construtur não pode ser utilizado.
+
+-atividades práticas
+#atividade 1
+    1.Crie uma função que recebe o array alunos e um número que irá 
+representar a média final;
+    2.Percorra o array e popule um novo array auxiliar apenas com os 
+alunos cujas notas são maiores ou iguais à média final;
+    3.Utilize a técnica "object destructuring" para manipular as propriedades
+ desejadas de cada aluno.
+
+#atividade 2
+
+ Dada a função calculaIdade, utilize os métodos call e apply para modificar 
+o valor de this. Crie seus próprios objetos para esta atividade!
+
+function calculaIdade(anos) {
+	return `Daqui a ${anos} anos, ${this.nome} terá ${
+		this.idade + anos
+	} anos de idade.`;
+}
+
+
+
+
+  
+
+
+
